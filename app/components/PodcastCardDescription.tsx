@@ -30,7 +30,7 @@ const PodcastCardDescription = ({currentPodcast}: IPodcastCardDescription) => {
             sizes="100vw"
             style={{ width: 200, height: 200 }}
         />
-        {/* <Divider /> */}
+        <Divider />
         <Link href={`/podcast/${currentPodcast?.id?.attributes['im:id']}`}>
             <h4 style={{color: 'black', fontWeight: 'bold'}}>
                 {currentPodcast['im:name']?.label}
@@ -41,7 +41,7 @@ const PodcastCardDescription = ({currentPodcast}: IPodcastCardDescription) => {
                 {currentPodcast['im:artist']?.label}
             </p>
         </Link>
-        {/* <Divider /> */}
+        <Divider />
         <h5 >Description:</h5>
         <p style={{fontFamily: 'cursive',wordWrap: 'break-word'}}>{currentPodcast?.summary?.label}</p>
     </Paper>
