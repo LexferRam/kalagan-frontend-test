@@ -1,9 +1,9 @@
 import { Podcast } from '@/interface'
 import { Chip, TextField } from '@mui/material'
 
-interface IInputFilter{ 
-    filteredPodcasts: Podcast[], 
-    filter: string, 
+interface IInputFilter {
+    filteredPodcasts: Podcast[],
+    filter: string,
     setFilter: React.Dispatch<React.SetStateAction<string>>
 }
 
@@ -19,8 +19,9 @@ const InputFilter = ({ filteredPodcasts, filter, setFilter }: IInputFilter) => {
                 marginRight: 20
             }}
         >
-            <Chip label={filteredPodcasts.length} color="primary" />
+            <Chip role='button' label={filteredPodcasts.length} color="primary" />
             <TextField
+                data-testid='textbox'
                 value={filter}
                 variant="outlined"
                 onChange={(e) => setFilter(e.target.value)}

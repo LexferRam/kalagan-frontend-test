@@ -7,10 +7,10 @@ import Link from 'next/link';
 function ResponsiveAppBar() {
 
     return (
-        <AppBar position="static" style={{ backgroundColor: 'white', position: 'fixed', zIndex: 10 }}>
+        <AppBar role='toolbar' position="static" style={{ backgroundColor: 'white', position: 'fixed', zIndex: 10 }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
+                    <Link role='link' href="/" style={{ display: 'flex', alignItems: 'center' }}>
                         <Typography
                             variant="h6"
                             noWrap
@@ -28,22 +28,24 @@ function ResponsiveAppBar() {
                         </Typography>
                     </Link>
 
-                    <Typography
-                        variant="h5"
-                        noWrap
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'flex', md: 'none' },
-                            flexGrow: 1,
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'blue',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        LOGO
-                    </Typography>
+                    <Link role='link' href="/" style={{ display: 'flex', alignItems: 'center' }}>
+                        <Typography
+                            variant="h5"
+                            noWrap
+                            sx={{
+                                mr: 2,
+                                display: { xs: 'flex', md: 'none' },
+                                flexGrow: 1,
+                                fontFamily: 'monospace',
+                                fontWeight: 700,
+                                letterSpacing: '.3rem',
+                                color: 'blue',
+                                textDecoration: 'none',
+                            }}
+                        >
+                            Podcaster
+                        </Typography>
+                    </Link>
 
                 </Toolbar>
             </Container>

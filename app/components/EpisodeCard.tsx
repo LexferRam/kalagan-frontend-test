@@ -3,7 +3,7 @@ import { Divider, Paper } from '@mui/material'
 import React from 'react'
 
 interface IEpisodeCard{
-    currentEpisode: Episode
+    currentEpisode:  Pick<Episode, "trackName" | "description" | "previewUrl">
 }
 
 const EpisodeCard = ({ currentEpisode }: IEpisodeCard) => {
@@ -30,6 +30,7 @@ const EpisodeCard = ({ currentEpisode }: IEpisodeCard) => {
                     />
                     <Divider />
                     <audio
+                        role='audio'
                         src={currentEpisode?.previewUrl}
                         controls
                         style={{ width: '100%' }}

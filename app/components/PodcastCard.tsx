@@ -1,20 +1,20 @@
 'use client'
 
-import { Podcast } from '@/interface'
+import { ID, Podcast } from '@/interface'
 import { Avatar, Paper } from '@mui/material'
 import Link from 'next/link'
 
 interface IPodcastCard {
-    item: Podcast
+    item: Pick<Podcast, "id" | "im:image" | "im:artist" | "title">;
 }
 
 const PodcastCard = ({ item }: IPodcastCard) => {
-
     return (
         <Link
             href={`/podcast/${item?.id?.attributes['im:id']}`}
         >
             <Paper
+                data-testid="postCard"
                 elevation={4}
                 style={{
                     display: 'flex',

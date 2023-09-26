@@ -9,10 +9,15 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Link from 'next/link';
-import { Episode, Episodes } from '@/interface';
+import { Episode } from '@/interface';
 import { convertDateFormat, convertMiliseconds } from '../utils';
 
-interface ICustomizedTables{
+type EpisodeTableData = Pick<Episode, 'trackId' | 'trackName' | 'releaseDate' | 'trackTimeMillis'>
+export interface Episodes {
+  resultCount: number;
+  results: Pick<Episode, 'trackId' | 'trackName' | 'releaseDate' | 'trackTimeMillis'>[]
+}
+interface ICustomizedTables {
   data: Episodes
   podcastId: string
 }
@@ -49,7 +54,7 @@ export default function CustomizedTables({ data, podcastId }: ICustomizedTables)
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.results.slice(1).map((row: Episode) => (
+          {data.results.slice(1).map((row: EpisodeTableData) => (
             <StyledTableRow key={row?.trackId}>
               <StyledTableCell component="th" scope="row">
                 <Link href={`/podcast/${podcastId}/episode/${row?.trackId}`}>
@@ -60,6 +65,13 @@ export default function CustomizedTables({ data, podcastId }: ICustomizedTables)
               <StyledTableCell align="right">{convertMiliseconds(row?.trackTimeMillis)}</StyledTableCell>
             </StyledTableRow>
           ))}
+          {data.results.length <= 1 && (
+            <StyledTableRow>
+              <StyledTableCell align="right"></StyledTableCell>
+              <StyledTableCell align="right">No data</StyledTableCell>
+              <StyledTableCell align="right"></StyledTableCell>
+            </StyledTableRow>
+          )}
         </TableBody>
       </Table>
     </TableContainer>
