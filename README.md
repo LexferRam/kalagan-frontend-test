@@ -8,12 +8,6 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -28,24 +22,32 @@ First, build the app:
 
 ```bash
 npm run build
-# or
-yarn build
-# or
-pnpm build
-# or
-bun build
 ```
 
-test build app:
+run build:
 
 ```bash
 npm run start
-# or
-yarn start
-# or
-pnpm start
-# or
-bun start
+```
+
+## Execute unit tests
+
+```bash
+npm run test
+```
+
+## Execute E2E tests
+
+First, run the development server:
+
+```bash
+npm run dev
+```
+
+Then execute cypress script:
+
+```bash
+npm run cypress:ui
 ```
 
 ## Learn More

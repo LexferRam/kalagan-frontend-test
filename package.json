@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "cypress:ui": "cypress open"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -29,6 +30,7 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "cypress": "^13.1.0",
     "eslint": "latest",
     "eslint-config-next": "latest",
     "eslint-plugin-jest-dom": "^5.1.0",
