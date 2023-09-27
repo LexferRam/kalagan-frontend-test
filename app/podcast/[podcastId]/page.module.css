@@ -1,0 +1,17 @@
+.podcastPageContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.episodesContainer {
+    margin: 20px;
+    width: 65%;
+}
+
+.episodesCountContainer {
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 12px;
+}

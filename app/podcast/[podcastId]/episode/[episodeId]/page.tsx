@@ -1,6 +1,7 @@
 import { getPodcastEpisodes, getPodcasts } from "@/services"
 import { EpisodeCard, PodcastCardDescription } from "@/app/components"
 import { Episode, Podcast } from "@/interface"
+import styles from './page.module.css'
 
 interface IEpisodePage {
     params: {
@@ -18,14 +19,7 @@ const page = async ({ params }: IEpisodePage) => {
     const currentEpisode: Episode = podcastInfo?.results?.filter((itemEpisode: Episode) => itemEpisode?.trackId === Number(params?.episodeId))[0]
 
     return (
-        <div
-            style={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-around',
-                flexWrap: 'wrap',
-            }}
-        >
+        <div className={styles.episodeDescriptionContainer}>
             <PodcastCardDescription currentPodcast={currentPodcast} />
             <EpisodeCard currentEpisode={currentEpisode} />
         </div>

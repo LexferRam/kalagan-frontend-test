@@ -3,6 +3,7 @@ import CustomizedTables from '@/app/components/Table'
 import { getPodcastEpisodes, getPodcasts } from '@/services'
 import { PodcastCardDescription } from '@/app/components'
 import { Podcast } from '@/interface'
+import styles from './page.module.css'
 
 interface IPodcastPage {
     params: {
@@ -17,18 +18,11 @@ const page = async ({ params }: IPodcastPage) => {
     const podcastEpisodes = await getPodcastEpisodes(params?.podcastId)
 
     return (
-        <div
-            style={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-around',
-                flexWrap: 'wrap',
-            }}
-        >
+        <div className={styles.podcastPageContainer} >
             <PodcastCardDescription currentPodcast={currentPodcast} />
-            <div style={{ margin: 20, width: '65%' }}>
+            <div className={styles.episodesContainer}>
                 <div>
-                    <Paper elevation={4} style={{ padding: 20, width: '100%', marginBottom: 12 }}>
+                    <Paper elevation={4} className={styles.episodesCountContainer}>
                         <h4>Episodes: {podcastEpisodes?.results?.length}</h4>
                     </Paper>
                     <CustomizedTables data={podcastEpisodes} podcastId={params?.podcastId} />

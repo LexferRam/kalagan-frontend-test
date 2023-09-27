@@ -7,7 +7,7 @@ import Link from 'next/link';
 function ResponsiveAppBar() {
 
     return (
-        <AppBar role='toolbar' position="static" style={{ backgroundColor: 'white', position: 'fixed', zIndex: 10 }}>
+        <AppBar role='toolbar' position="static" sx={{ backgroundColor: 'white', position: 'fixed', zIndex: 10 }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Link role='link' href="/" style={{ display: 'flex', alignItems: 'center' }}>

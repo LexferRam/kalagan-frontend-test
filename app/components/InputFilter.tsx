@@ -27,7 +27,7 @@ const InputFilter = ({ filteredPodcasts, filter, setFilter }: IInputFilter) => {
                 onChange={(e) => setFilter(e.target.value)}
                 type='text'
                 placeholder='Filter podcasts...'
-                style={{
+                sx={{
                     width: 350
                 }}
             />
